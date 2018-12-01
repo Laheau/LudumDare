@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class main : MonoBehaviour {
 
-    public Text madness, workerCount, intellectCount;
+    public Text workerCount, intellectCount;
+    public Slider progressBar;
     public int bois;
     public static int rage = 100;
 
@@ -17,8 +18,10 @@ public class main : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        workerCount.text = Worker.population + " w";
+        intellectCount.text = Intellect.population + " i";
+        progressBar.value = rage / 100f;
+    }
 
     IEnumerator Ticks()
     {
@@ -26,11 +29,8 @@ public class main : MonoBehaviour {
         {
 
             rage--;
-            madness.text = rage + "%";
             Worker.Add();
             Intellect.Add();
-            workerCount.text = Worker.population + " w";
-            intellectCount.text = Intellect.population + " i";
 
 
             yield return new WaitForSeconds(1f);
