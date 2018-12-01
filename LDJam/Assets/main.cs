@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class main : MonoBehaviour {
 
-
+    public Text madness, workerCount, intellectCount;
     public int bois;
+    public static int rage = 100;
+
 	// Use this for initialization
 	void Start () {
-        StartCoroutine("WorkerTime");
+        StartCoroutine("Ticks");
+
 	}
 	
 	// Update is called once per frame
@@ -16,22 +20,20 @@ public class main : MonoBehaviour {
 		
 	}
 
-    IEnumerator WorkerTime()
-    {
-        while(true)
-        {
-            Worker.Add();
-            Debug.Log(Worker.nb);
-            yield return new WaitForSeconds(100 / Maison.workerHouse);
-        }
-    }
-
-    IEnumerable Tick()
+    IEnumerator Ticks()
     {
         while (true)
         {
 
-            yield return new WaitForSeconds(1);
+            rage--;
+            madness.text = rage + "%";
+            Worker.Add();
+            Intellect.Add();
+            workerCount.text = Worker.population + " w";
+            intellectCount.text = Intellect.population + " i";
+
+
+            yield return new WaitForSeconds(1f);
         }
     }
 }

@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class Maison : MonoBehaviour {
 
-    public  static int workerHouse = 4;
-
+    public static int workerHouse = 4;
     public static int intellectHouse;
-    static int intellectTime;
 
-    public static void AddWorkerHouse()
+    public void AddWorkerHouse()
     {
         workerHouse++;
     }
 
-    public static void AddIntellectHouse()
+    public void AddIntellectHouse()
     {
         intellectHouse++;
     }
