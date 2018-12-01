@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class Intellect : MonoBehaviour
 {
-    public static int population;
-    static int valeur = 10;
-    static int delay = 4;
-    static int addCouldown = delay;
+    public static int population = 1;
+    static int valeur = 100;
+    static int childDelay = 4;
+    static int productionDelay = 10;
+    static int time = 0;
 
-    public static void Add()
+    public static void Tick()
     {
-        if (addCouldown == 0)
+        time++;
+        if (time % childDelay == 0)
         {
-            Debug.Log("Nb of worker: " + population);
             population += Maison.intellectHouse;
-            addCouldown = delay;
         }
-        else
+        if(time % productionDelay == 0)
         {
-            addCouldown--;
+            main.metal += population;
         }
     }
     public void Sacrifie()
@@ -42,8 +42,4 @@ public class Intellect : MonoBehaviour
         }
     }
 
-    public static void Production()
-    {
-
-    }
 }

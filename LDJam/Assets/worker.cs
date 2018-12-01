@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class Worker : MonoBehaviour
 {
-    public static int population;
-    static int valeur = 5;
-    static int delay = 4;
-    static int addCouldown = delay;
+    public static int population = 4;
+    static int valeur = 50;
+    static int childDelay = 4;
+    static int productionDelay = 10;
+    static int time = 0;
 
-    public static void Add()
+    public static void Tick()
     {
-        if (addCouldown == 0)
+        time++;
+        if (time % childDelay == 0)
         {
-            Debug.Log("Nb of worker: " + population);
-            population += Maison.workerHouse;
-            addCouldown = delay;
+            population += Maison.intellectHouse;
         }
-        else
+        if (time % productionDelay == 0)
         {
-            addCouldown--;
+            main.bois += population;
         }
     }
     public void Sacrifie()
@@ -42,8 +42,4 @@ public class Worker : MonoBehaviour
         }
     }
 
-    public static void Production()
-    {
-
-    }
 }

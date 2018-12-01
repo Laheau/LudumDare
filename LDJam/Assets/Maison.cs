@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Maison : MonoBehaviour {
 
-    public static int workerHouse = 4;
+    public static int workerHouse = 0;
     public static int intellectHouse;
 
     public void AddWorkerHouse()
