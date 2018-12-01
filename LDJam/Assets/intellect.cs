@@ -26,7 +26,6 @@ public class Intellect : MonoBehaviour
     {
         if (population > 0)
         {
-            Debug.Log(population);
             if (main.rage == 100)
             {
             }

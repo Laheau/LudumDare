@@ -26,7 +26,6 @@ public class Worker : MonoBehaviour
     {
         if (population > 0)
         {
-            Debug.Log(population);
             if (main.rage == 100)
             {
             }

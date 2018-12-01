@@ -9,11 +9,20 @@ public class Maison : MonoBehaviour {
 
     public void AddWorkerHouse()
     {
-        workerHouse++;
+        if(main.bois >= 100)
+        {
+            workerHouse++;
+            main.bois -= 100;
+        }
+
     }
 
     public void AddIntellectHouse()
     {
-        intellectHouse++;
+        if (main.bois >= 200)
+        {
+            intellectHouse++;
+            main.bois -= 200;
+        }
     }
 }

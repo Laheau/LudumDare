@@ -42,7 +42,7 @@ public class main : MonoBehaviour {
 
     void TakeDamages(int time)
     {
-        if(time < 20)
+        if(time < 40)
         {
             rage = rage - 0.5f;
         }
